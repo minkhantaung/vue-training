@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <counter subject="Likes"></counter>
+        <counter subject="Dislikes"></counter>
+    </div>
+
+    <template id="counter-template">
+        <h1>{{ subject }}</h1>
+        <button @click="count += 1">{{ count }}</button>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+
+    <script>
+
+        new Vue({
+            el: '#app',
+
+            components: {
+                counter: {
+                    template: '#counter-template',
+
+                    props: ['subject'],
+
+                    data: function() {
+                        return { count: 0 };
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
