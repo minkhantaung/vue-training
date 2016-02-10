@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 12</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <alert>
+        <strong>General!</strong>
+        Your account has not been updated.
+    </alert>
+
+    <alert type="error">
+        <strong>Error!</strong>
+        Your account has not been updated.
+    </alert>
+
+    <alert type="success">
+        <strong>Success!</strong>
+        Your account has been updated.
+    </alert>
+
+    <template id="alert-template">
+        <div :class="alertClasses" v-show="show">
+            <slot></slot>
+            <span class="Alert__close" @click="show = false">x</span>
+        </div>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+
+    <script src="lesson12.js"></script>
+
+</body>
+</html>

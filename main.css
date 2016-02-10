@@ -16,3 +16,28 @@ textarea {
     margin: auto;
     width: 50%;
 }
+
+.Alert {
+    position: relative;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    padding: 1em;
+}
+
+.Alert__close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.Alert--Success {
+    background-color: green;
+    border: 1px solid lightgreen;
+}
+
+.Alert--Error {
+    background-color: red;
+    border: 1px solid lightgreen;
+}
