@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 7</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <style type="text/css">
+        .completed { text-decoration: line-through; }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul>
+            <li :class="{ 'completed': task.completed }"
+                v-for="task in tasks"
+                @click="toggleCompletedFor(task)"
+            >
+                {{ task.body }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

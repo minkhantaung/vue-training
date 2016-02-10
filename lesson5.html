@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1>{{ fullName }}</h1>
+    <input type="text" v-model="first" placeholder="First Name">
+    <input type="text" v-model="last" placeholder="Last Name">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+
+    <script>
+
+        new Vue({
+            el: 'body',
+
+            data: {
+                first: 'Richard',
+                last: 'White',
+            },
+
+            computed: {
+                fullName: function() {
+                    return this.first + ' ' + this.last;
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 9</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <style type="text/css">
+        .completed { text-decoration: line-through; }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <tasks :list="tasks"></tasks>
+    </div>
+
+    <template id="tasks-template">
+        <h1>
+            My Tasks
+            <span v-show="remaining">({{ remaining }})</span>
+        </h1>
+        <ul v-show="list.length">
+            <li :class="{ 'completed': task.completed }"
+                v-for="task in list"
+                @click="task.completed = ! task.completed"
+            >
+                {{ task.body }}
+
+                <strong @click="deleteTask(task)">x</strong>
+            </li>
+        </ul>
+
+        <p v-else>No tasks yet!</p>
+        <button @click="clearCompleted">Clear Completed</button>
+    </template>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.16/vue.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
